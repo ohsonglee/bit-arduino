@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>	
+/*absolute 사용하기
+ * => 가장 가까운 조상을 기준으로 위치를 지정할 수 있다.
+ * => 기준이 되는 조상은 absolute, fixed, relative여야 한다.
+ * => 만약 조상 중에 기준을 만족하는 조상이 없다면,
+ *    body를 기준으로 위치를 잡는다.
+ * 
+ * absolute => 조상 컴포넌트를 기준으로 위치 지정. 공중부양
+ * fixed => 브라우저를 기준으로 위치 지정. 공중부양
+ * relative => 현재 위치를 고수. 앞/뒤, 좌/우로 위치를 조정.
+ * 				=>absolute의 기준 객체로 
+ */
+
+	#header {
+		height: 40px;
+		background-color: yellow;
+	}
+	
+	#sidebar {
+		float: left;
+		width:  160px;
+		height: 500px;
+		background-color: gray;
+		
+	}
+	
+	#content1, #content2 {
+		margin-left: 165px;
+		padding: 0px 10px 0px 10px;
+		width: 600px;
+		border: 1px solid black;
+	}
+	
+	#footer {
+		clear: left;
+		height: 40px;
+		background-color: blue;
+		color:white;
+	}
+	h1 {
+		color: gray;
+	}
+	#img1 {
+		position: absolute;
+		left: 50px;
+		top: 70px;
+		border: 1px solid gray;
+	}
+	p {
+		border: 1px dotted lightgray;
+	}
+	#content1 {
+		position:relative;
+		left: -30PX;
+		top: -30px;
+	}
+	#img2 {
+		position: fixed;
+		left: 50px;
+		top: 70px;
+		border: 1px solid gray;
+
+	}
+</style>
+</head>
+<body>
+<div id="header">
+	<h1>FHFHFHFHFHFH</h1>
+</div>
+<div id="sidebar"></div>	
+<div id="content1">
+	<h3>AAAKKKAAA</h3>
+	<p>Document languages may contain attributes that are declared to be of type ID. What makes attributes of type ID special is that no two such attributes can have the same value; whatever the document language, an ID attribute can be used to uniquely identify its element. In HTML all ID attributes are named "id"; XML applications may name ID attributes differently, but the same restriction applies.
+	The ID attribute of a document language allows authors to assign an identifier to one element instance in the document tree. CSS ID selectors match an element instance based on its identifier. A CSS ID selector contains a "#" immediately followed by the ID value, which must be an identifier.
+	<img id="img1" src='http://icon.daumcdn.net/w/icon/1312/19/152729032.png'></p>
+</div>
+<div id="content2">
+	<p>Document languages may contain attributes that are declared to be of type ID. What makes attributes of type ID special is that no two such attributes can have the same value; whatever the document language, an ID attribute can be used to uniquely identify its element. In HTML all ID attributes are named "id"; XML applications may name ID attributes differently, but the same restriction applies.
+	The ID attribute of a document language allows authors to assign an identifier to one element instance in the document tree. CSS ID selectors match an element instance based on its identifier. A CSS ID selector contains a "#" immediately followed by the ID value, which must be an identifier.</p>
+</div>
+<div id="footer">adfsjkgfdgjbkfdslkfjbsdfkljgdsfgkhjpoihueowpritgu</div>
+<img id="img2" src='http://icon.daumcdn.net/w/icon/1312/19/152729032.png'>
+
+</body>
+</html>
