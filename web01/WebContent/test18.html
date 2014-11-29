@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+</style>
+</head>
+<body>
+
+<div id="d1">
+	<button id="btn1">요청</button><br>
+<table id="t1" border="1">
+	<tbody>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+		</tr>
+	</tbody>
+</table>	
+</div>
+
+<script>
+//동적으로 테이블 만들기.
+document.getElementById('btn1').onclick = function(){
+	var xhr = new XMLHttpRequest();
+	//요청상태가 바뀔때 마다 호출될 메서드 등록.
+	//readyState
+	//open() 호출 후 
+	//send() 호출 후 
+	//데이터 수신중
+	//데이터 수신완료
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 ){
+		var obj = JSON.parse(xhr.responseText);			
+		console.log(obj.name);
+		}
+	};
+	xhr.open("GET","http://api.openweathermap.org/data/2.5/weather?q=seoul,kr", true);//true 비동기식. false동기식 
+	xhr.send(); // 서버에 요청.
+	//var obj = JSON.parse(xhr.responseText);
+	//console.log(obj.name);
+};
+
+</script>
+
+
+</body>
+</html>
